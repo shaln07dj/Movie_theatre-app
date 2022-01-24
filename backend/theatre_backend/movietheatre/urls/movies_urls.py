@@ -10,5 +10,5 @@ urlpatterns=[
 
      path('create/',views.CreateMovies.as_view()),
    
-     path('<str:pk>/', views.GetMovies.as_view()),
+     path('<str:pk>/', views.GetMovie.as_view()),
 ]

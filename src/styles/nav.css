@@ -1,0 +1,31 @@
+.navPrimaray{
+   height: 70px;
+    background-color:#26243b
+    /* background-color:#060729; */
+
+}
+.navPrimarayFlex{
+  align-items: center;
+  margin-top: 0px;
+  margin-left:50px;
+  display: flex;
+}
+.navSec{
+    height: 40px;
+    background-color:#1c1a36;
+}
+.navSearch{
+  margin-left: 10px;
+
+  display: flex;
+
+}
+
+.navInput{
+  color: #ffff;
+
+  border-radius: 50px;
+}
+.navSearchBtn{
+margin-left: 20px;
+}

@@ -1,0 +1,71 @@
+.navPrimaray{
+    margin-top: 0px;
+    width: 100%;
+    height: 70px;
+     background-color:#34324b;
+     margin: 0px;
+
+     /* background-color:#060729; */
+ 
+ }
+ .navPrimarayFlex{
+   align-items: center;
+   margin-top: 0px;
+   width: 25rem;
+   height: 2rem;
+   display: flex;
+   
+ }
+ .navSec{
+     height: 40px;
+     background-color:#1c1a36;
+ }
+ .navSearch{
+    margin-left: 0px;
+   margin-left: 10px;
+   width: 100%;
+ 
+ 
+   display: flex;
+ 
+ 
+ }
+ 
+ .navInput{
+   margin-top: 0px;
+   height: 2rem;
+   width: 100%;
+   border-radius: 10px;
+ }
+ .navSearchBtn{
+background-color: #0c4405;
+ margin-left: 20px;
+ border: none;
+ border-radius: 5px;
+ color: #fff;
+ }
+.navLoginBtn{
+    background-color: #bd0909;
+    margin-left: 20px;
+    border: none;
+    width:5rem;
+    height: 2rem;
+    float: right;
+        border-radius: 5px;
+    color: #fff;  
+}
+
+ .nav-item{
+     color: #fff;
+ }
+link{
+    color: #ffff;
+}
+
+ .navSecondray{
+     margin-top: -20px;
+    width: 100%;
+    height: 40px;
+
+    background-color:#201f42;
+ }

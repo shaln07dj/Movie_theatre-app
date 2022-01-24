@@ -34,13 +34,13 @@ class CreateMovies(APIView):
             })
         else:
             return Response({
-                'error':'product_data.errors'
+                'error':movie_data.errors
             })
             
 
         
 class GetMovie(APIView):
-    def get(self,reequest,pk):
+    def get(self,request,pk):
         movie=Movies.objects.get(id=pk)
         response=MovieSerializers(movie,many=False)
         return Response(response.data)
