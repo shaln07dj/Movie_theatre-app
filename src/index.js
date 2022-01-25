@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import movieSlice,{movieFetch} from './slice/MoviesSlice';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 
-import moviesSlice,{movieFetch} from './slice/MoviesSlice';
+
 
 
 import reportWebVitals from './reportWebVitals';
 
 const store=configureStore({
   reducer:{
-    moviesSlice,
+    movieSlice,
   }
 })
 store.dispatch(movieFetch());
