@@ -1,8 +1,3 @@
-/**
- * inspiration repo: https://github.com/bradtraversy/vanillawebprojects
- * movie seat booking: https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking
- * but in react 🤓
- */
 
 
  import React, { useState } from 'react'
