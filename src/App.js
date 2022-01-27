@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import {BrowserRouter,Routes,Route } from 'react-router-dom';
 
 import SeatBooking from './components/SeatBooking';
+import Movies from './components/Movies';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Nav/>
       <Routes>
       <Route  path="/home"element={<Home/>}/>
+      <Route path='/movies'element={<Movies/>}/>
       <Route path='/seat'element={<SeatBooking />}/>
       </Routes>
       </BrowserRouter>

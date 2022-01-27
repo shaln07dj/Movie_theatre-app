@@ -5,7 +5,6 @@ const Nav = () => {
   
   return <div >
        
-
 <div
 
         id="nav-bar"
@@ -13,12 +12,13 @@ const Nav = () => {
         className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top "
         data-spy="affix"
         data-offset-top="197"
+        style={{'backgroundColor':'#1c1a36','marginTop':'0px'}}
        
         
       >
         <div  className="navPrimaray container-fluid " >
           <a class="navbar-brand" href="#">
-            <h3 style={{'color':'#ffff'}}>Book My Show
+            <h3 style={{'width':'100%','color':'#ffff'}}>Book My Show
               
             </h3>
           </a>

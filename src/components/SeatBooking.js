@@ -4,36 +4,31 @@
  import clsx from 'clsx'
  import { useSelector, useDispatch } from "react-redux";
  import '../styles/seatstyles.css';
- const allmovies = [
-   {
-     name: 'Avenger',
-     price: 10,
-     occupied: [20, 21, 30, 1, 2, 8],
-   },
-   {
-     name: 'Joker',
-     price: 12,
-     occupied: [9, 41, 35, 11, 65, 26],
-   },
-   {
-     name: 'Toy story',
-     price: 8,
-     occupied: [37, 25, 44, 13, 2, 3],
-   },
-   {
-     name: 'the lion king',
-     price: 9,
-     occupied: [10, 12, 50, 33, 28, 47],
-   },
- ]
+
+
+
+ const allmovies = {
+   
+     occupied: [],
+   };
+  
+
  
- const seats = Array.from({ length: 12 * 8 }, (_, i) => i)
+ console.log(allmovies)
+ 
+ const seats = Array.from({ length: 16 * 20 }, (_, i) => i)
  
  export default function SeatBooking() {
-   const [selectedMovie, setSelectedMovie] = useState(allmovies[0])
+   const [selectedMovie, setSelectedMovie] = useState(allmovies)
    const [selectedSeats, setSelectedSeats] = useState([])
    const {movies,status,error}=useSelector(state=>state.movieSlice)
-   console.log(movies)
+  //  console.log(movies.indexof())
+  movies?allmovies.details=movies:allmovies=allmovies
+  console.log(allmovies)
+  const abs=movies
+  console.log(abs)
+  
+ 
  
    return (
      <div className="seatApp">
@@ -44,6 +39,7 @@
            setSelectedMovie(movie)
          }}
        /> */}
+       <Till movies={movies}/>
        <ShowCase />
        <Cinema
          movie={selectedMovie}
@@ -82,7 +78,23 @@
 //      </div>
 //    )
 //  }
- 
+ function Till({movies}){
+   console.log(movies[0]?.name)
+   return(
+   <div style={{'width':'100%'}}>
+        <div style={{'marginRight':' 20px','marginLeft':' 20px','height':'150px','backgroundColor':'#26243b','zIndex':'-2','alignItems':'center'}}>
+        <div style={{'display':'flex','width':'100%','height':'100%'}}><div style={{'display':'flex','width':'70%'}}>
+         <div style={{'marginTop':'25px','marginLeft':'100px'}}><h1>{movies[0]?.name}</h1></div></div>
+        <div style={{'display':'flex','width':'30%'}}>
+       
+          <div style={{'marginTop':'25px','display':'flex','width':'30%'}} ><h1>Dir</h1></div>
+          <div style={{'display':'flex','width':'70%'}}>
+            <div style={{'marginTop':'25px','marginLeft':'20px'}}><h1>Crew</h1></div></div>
+          </div></div></div>
+      
+      </div>
+   )
+ }
  function ShowCase() {
    return (
      <ul className="ShowCase">

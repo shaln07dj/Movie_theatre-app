@@ -1,6 +1,7 @@
 .navPrimaray{
    height: 70px;
-    background-color:#26243b
+    background-color:#26243b;
+    margin-left: -20px;
     /* background-color:#060729; */
 
 }
