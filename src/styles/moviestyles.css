@@ -1,0 +1,39 @@
+.moviePage{
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+}
+.innerFlex{
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+.leftFlex{
+    display: flex;
+    margin-left: 50px;
+    width: 30%;
+    height: 500px;
+}
+.leftFlexContent,.rightFlexContent{
+    
+    align-items: center;
+    width: 100%;
+    
+}
+.rightFlex{
+    display: flex;
+    width: 70%;
+}
+.movies {
+    display: grid;
+    grid-gap: 20px;
+    
+    height: 800px;
+    
+    
+    
+    grid-template-columns: repeat(4, max-content);
+    align-items: center;
+    
+  }
+
