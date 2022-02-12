@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import movieSlice,{movieFetch} from './slice/MoviesSlice';
+import movieDetailSlice from './slice/movie';
 import {configureStore} from '@reduxjs/toolkit';
 import {Provider} from 'react-redux';
 
@@ -14,6 +15,7 @@ import reportWebVitals from './reportWebVitals';
 const store=configureStore({
   reducer:{
     movieSlice,
+    movieDetailSlice
   }
 })
 store.dispatch(movieFetch());

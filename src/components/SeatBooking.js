@@ -9,7 +9,7 @@
 
  const allmovies = {
    
-     occupied: [],
+     occupied: [10],
    };
   
 
@@ -19,14 +19,18 @@
  const seats = Array.from({ length: 16 * 20 }, (_, i) => i)
  
  export default function SeatBooking() {
+  const {movie}=useSelector(state=>state.movieDetailSlice)
+  allmovies.movie=movie
    const [selectedMovie, setSelectedMovie] = useState(allmovies)
    const [selectedSeats, setSelectedSeats] = useState([])
    const {movies,status,error}=useSelector(state=>state.movieSlice)
+  
   //  console.log(movies.indexof())
   movies?allmovies.details=movies:allmovies=allmovies
   console.log(allmovies)
   const abs=movies
   console.log(abs)
+  console.log(movie)
   
  
  
@@ -39,7 +43,7 @@
            setSelectedMovie(movie)
          }}
        /> */}
-       <Till movies={movies}/>
+       <Till movies={movie}/>
        <ShowCase />
        <Cinema
          movie={selectedMovie}
@@ -51,7 +55,7 @@
          You have selected <span className="count">{selectedSeats.length}</span>{' '}
          seats for the price of{' '}
          <span className="total">
-         ₹ {selectedSeats.length * selectedMovie.price}
+         ₹ {selectedSeats.length * selectedMovie.movie.price}
          </span>
        </p>
      </div>
@@ -79,17 +83,37 @@
 //    )
 //  }
  function Till({movies}){
-   console.log(movies[0]?.name)
+   console.log(movies?.name)
    return(
    <div style={{'width':'100%'}}>
         <div style={{'marginRight':' 20px','marginLeft':' 20px','height':'150px','backgroundColor':'#26243b','zIndex':'-2','alignItems':'center'}}>
         <div style={{'display':'flex','width':'100%','height':'100%'}}><div style={{'display':'flex','width':'70%'}}>
-         <div style={{'marginTop':'25px','marginLeft':'100px'}}><h1>{movies[0]?.name}</h1></div></div>
+         <div style={{'marginTop':'25px','marginLeft':'100px'}}><h1>{movies?.name}</h1></div></div>
         <div style={{'display':'flex','width':'30%'}}>
        
-          <div style={{'marginTop':'25px','display':'flex','width':'30%'}} ><h1>Dir</h1></div>
+          <div style={{'marginTop':'25px','display':'flex','width':'30%'}} ><h6>Director</h6></div>
           <div style={{'display':'flex','width':'70%'}}>
-            <div style={{'marginTop':'25px','marginLeft':'20px'}}><h1>Crew</h1></div></div>
+            <div style={{'marginTop':'25px','marginLeft':'20px'}}><h6>Crew</h6> <div style={{'display':'flex','width':'100%'}}>
+              
+            <div style={{'marginTop':'0px','width':'100px','height':'50px','borderRadius':'100px'}}>{movies?.cast_details?.movie_cast_detail1?.img?<img src={movies?.cast_details?.movie_cast_detail1?.img} style={{'borderRadius':'50px'}}width="50px" height="50px"/>:''}
+            <div style={{'marginTop':'10px', 'color':'#ffff','width':'100%','textOverflow': 'ellipsis','fontSize':'10px'}}>{movies?.cast_details?.movie_cast_detail1?.name?<h8>{movies?.cast_details?.movie_cast_detail1?.name}</h8>:''}
+              </div>
+              </div>
+              <div style={{'marginTop':'0px','width':'100px','height':'50px','borderRadius':'100px'}}>{movies?.cast_details?.movie_cast_detail2?.img?<img src={movies?.cast_details?.movie_cast_detail2?.img} style={{'borderRadius':'50px'}}width="50px" height="50px"/>:''}
+            <div style={{'marginTop':'10px', 'color':'#ffff','width':'100%','textOverflow': 'ellipsis','fontSize':'10px'}}>{movies?.cast_details?.movie_cast_detail2?.name?<h8>{movies?.cast_details?.movie_cast_detail2?.name}</h8>:''}
+              </div>
+              </div>
+              {movies?.cast_details.movie_cast_detail3?
+              <div style={{'marginTop':'0px','width':'100px','height':'50px','borderRadius':'100px'}}>{movies?.cast_details?.movie_cast_detail3?.img?<img src={movies?.cast_details?.movie_cast_detail3?.img} style={{'borderRadius':'50px'}}width="50px" height="50px"/>:'null'}
+            <div style={{'marginTop':'10px', 'color':'#ffff','width':'100%','textOverflow': 'ellipsis','fontSize':'10px'}}>{movies?.cast_details?.movie_cast_detail3?.name?<h8>{movies?.cast_details?.movie_cast_detail3?.name}</h8>:''}
+              </div>
+              </div>:''}
+              
+              
+              </div>
+            </div>
+           
+        </div>
           </div></div></div>
       
       </div>

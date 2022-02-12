@@ -20,6 +20,13 @@
 }
 h1{
     color: #ffff;
+    margin-left: 0px;
+}
+h6{
+  color: #ffff;
+  font-size: 10px;
+  font-weight: 400;
+  margin-left: 0px;
 }
 .seatApp {
   text-align: center;
